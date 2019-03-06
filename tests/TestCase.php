@@ -36,7 +36,7 @@ abstract class TestCase extends BaseTestCase
             'prefix' => '',
         ]);
 
-        $app['config']->set('laravel-playbook.path', __DIR__.DIRECTORY_SEPARATOR.'Playbooks');
+        $app['config']->set('laravel-playbook.path', __DIR__.DIRECTORY_SEPARATOR.'Playbooks'.DIRECTORY_SEPARATOR);
         $app['config']->set('laravel-playbook.namespace', "\\Scaling\\Playbook\\Tests\\Playbooks");
     }
 

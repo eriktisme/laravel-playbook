@@ -10,7 +10,7 @@ return [
     | to change this path to anything you like.
     |
     */
-    'path' => app_path(DIRECTORY_SEPARATOR.'Console'.DIRECTORY_SEPARATOR.'Playbooks'),
+    'path' => app_path(DIRECTORY_SEPARATOR.'Console'.DIRECTORY_SEPARATOR.'Playbooks'.DIRECTORY_SEPARATOR),
 
     /*
     |--------------------------------------------------------------------------

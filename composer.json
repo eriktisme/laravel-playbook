@@ -1,0 +1,51 @@
+{
+    "name": "scaling/laravel-playbook",
+    "description": "",
+    "keywords": [
+        "scaling",
+        "laravel-playbook"
+    ],
+    "homepage": "https://github.com/scaling/laravel-playbook",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Erik",
+            "email": "erik@scaling.studio",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.7.*|5.8.*",
+        "illuminate/console": "5.7.*|5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.7.*|3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Scaling\\Playbook\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Scaling\\Playbook\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Scaling\\Playbook\\PlaybookServiceProvider"
+            ]
+        }
+    }
+}

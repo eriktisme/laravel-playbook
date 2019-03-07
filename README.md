@@ -41,7 +41,7 @@ If you discover any security related issues, please email erik@scaling.studio in
 
 ## Credits
 
-- [Erik](https://github.com/scaling)
+- [Erik](https://github.com/eriktisme)
 - [All Contributors](../../contributors)
 
 ## License

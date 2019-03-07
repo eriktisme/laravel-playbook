@@ -26,11 +26,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Playbook Local
+    | Playbook Production
     |--------------------------------------------------------------------------
     |
-    | Is it only possible to run playbooks on your development environment.
+    | Determine if it is possible to run playbook on your production environment.
     |
     */
-    'local' => true,
+    'production' => env('PLAYBOOK_PRODUCTION', false),
 ];

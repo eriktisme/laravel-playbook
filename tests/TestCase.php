@@ -2,8 +2,8 @@
 
 namespace Scaling\Playbook\Tests;
 
-use Orchestra\Testbench\TestCase as BaseTestCase;
 use Scaling\Playbook\PlaybookServiceProvider;
+use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -38,6 +38,8 @@ abstract class TestCase extends BaseTestCase
 
         $app['config']->set('laravel-playbook.path', __DIR__.DIRECTORY_SEPARATOR.'Playbooks'.DIRECTORY_SEPARATOR);
         $app['config']->set('laravel-playbook.namespace', "\\Scaling\\Playbook\\Tests\\Playbooks");
+
+        parent::getEnvironmentSetUp($app);
     }
 
     /**

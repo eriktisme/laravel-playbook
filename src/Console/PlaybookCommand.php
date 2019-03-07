@@ -37,8 +37,9 @@ class PlaybookCommand extends Command
      */
     public function handle()
     {
-        if (config('laravel-playbook.local') && ! app()->environment(['local', 'testing'])) {
+        if (! $this->isAllowedInProduction()) {
             $this->error('You can only run commands in local environment');
+
             return;
         }
 
@@ -144,5 +145,19 @@ class PlaybookCommand extends Command
     private function definitionHasRun(PlaybookDefenition $definition): bool
     {
         return isset($this->ranDefenitions[$definition->id]);
+    }
+
+    /**
+     * Determine if the action is allowed in a production environment.
+     *
+     * @return bool
+     */
+    private function isAllowedInProduction(): bool
+    {
+        if (!config('laravel-playbook.production') && config('app.env') === 'production') {
+            return false;
+        }
+
+        return true;
     }
 }

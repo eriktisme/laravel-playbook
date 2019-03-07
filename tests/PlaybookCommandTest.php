@@ -7,6 +7,27 @@ use Scaling\Playbook\Tests\Utils\Models\User;
 class PlaybookCommandTest extends TestCase
 {
     /** @test */
+    public function should_not_run_playbook_when_production_is_false()
+    {
+        config()->set('laravel-playbook.production', false);
+        config()->set('app.env', 'production');
+
+        $this->artisan('playbook:run')
+            ->expectsOutput('You can only run commands in local environment')
+            ->assertExitCode(0);
+    }
+    /** @test */
+    public function should_run_playbook_when_production_is_true()
+    {
+        config()->set('laravel-playbook.production', true);
+
+        $this->artisan('playbook:run')
+            ->expectsQuestion('Please choose a playbook', 'DefaultPlaybook')
+            ->expectsOutput('Running playbook `Scaling\Playbook\Tests\Playbooks\DefaultPlaybook` (#1)')
+            ->assertExitCode(0);
+    }
+
+    /** @test */
     public function when_no_playbook_name_is_given_ask_developer_for_a_playbook()
     {
         $this->artisan('playbook:run')

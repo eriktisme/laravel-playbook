@@ -3,8 +3,8 @@
 namespace Scaling\Playbook;
 
 use Illuminate\Support\ServiceProvider;
-use Scaling\Playbook\Console\MakePlaybookCommand;
 use Scaling\Playbook\Console\PlaybookCommand;
+use Scaling\Playbook\Console\MakePlaybookCommand;
 
 class PlaybookServiceProvider extends ServiceProvider
 {

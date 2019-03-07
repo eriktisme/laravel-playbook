@@ -16,6 +16,7 @@ class PlaybookCommandTest extends TestCase
             ->expectsOutput('You can only run commands in local environment')
             ->assertExitCode(0);
     }
+
     /** @test */
     public function should_run_playbook_when_production_is_true()
     {

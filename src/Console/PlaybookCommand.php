@@ -154,7 +154,7 @@ class PlaybookCommand extends Command
      */
     private function isAllowedInProduction(): bool
     {
-        if (!config('laravel-playbook.production') && config('app.env') === 'production') {
+        if (! config('laravel-playbook.production') && config('app.env') === 'production') {
             return false;
         }
 

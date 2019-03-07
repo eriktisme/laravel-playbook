@@ -28,6 +28,6 @@ class MakePlaybookCommandTest extends TestCase
     {
         parent::tearDown();
 
-        $this->fileSystem->delete(__DIR__.DIRECTORY_SEPARATOR. 'Playbooks/FooPlaybook.php');
+        $this->fileSystem->delete(__DIR__.DIRECTORY_SEPARATOR.'Playbooks/FooPlaybook.php');
     }
 }

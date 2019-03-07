@@ -76,7 +76,7 @@ class PlaybookCommand extends Command
             $definition->playbook->run($this->input, $this->output);
             $definition->playbook->finished();
 
-            $this->ranDefinitions[$definition->id] = ($this->ranDefinitions[$definition->id] ?? 0) + 1;
+            $this->ranDefenitions[$definition->id] = ($this->ranDefenitions[$definition->id] ?? 0) + 1;
         }
 
         foreach ($definition->playbook->after() as $book) {

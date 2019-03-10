@@ -48,5 +48,6 @@
                 "Scaling\\Playbook\\PlaybookServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev"
 }

@@ -19,7 +19,7 @@ class MakePlaybookCommandTest extends TestCase
     /** @test */
     public function it_can_successfully_create_a_new_playbook()
     {
-        $this->artisan('playbook:make Foo')
+        $this->artisan('make:playbook Foo')
             ->expectsOutput('Playbook created successfully.')
             ->assertExitCode(0);
     }

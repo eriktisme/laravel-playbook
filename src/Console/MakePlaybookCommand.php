@@ -12,7 +12,8 @@ class MakePlaybookCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'playbook:make {name : The name of the playbook}';
+    protected $signature = 'make:playbook 
+                            {name : The name of the playbook}';
 
     /**
      * The console command description.

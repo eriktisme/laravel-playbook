@@ -5,16 +5,20 @@ namespace Scaling\Playbook\Console;
 use Illuminate\Support\Str;
 use Scaling\Playbook\Playbook;
 use Illuminate\Console\Command;
+use Illuminate\Console\ConfirmableTrait;
 use Scaling\Playbook\PlaybookDefenition;
 
 class PlaybookCommand extends Command
 {
+    use ConfirmableTrait;
+
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'playbook:run {playbook?}';
+    protected $signature = 'playbook:run {playbook?}
+                            {--force : Force the operation to run when in production}';
 
     /**
      * The console command description.
@@ -37,9 +41,7 @@ class PlaybookCommand extends Command
      */
     public function handle()
     {
-        if (! $this->isAllowedInProduction()) {
-            $this->error('You can only run commands in local environment');
-
+        if (! $this->confirmToProceed()) {
             return;
         }
 
@@ -145,19 +147,5 @@ class PlaybookCommand extends Command
     private function definitionHasRun(PlaybookDefenition $definition): bool
     {
         return isset($this->ranDefenitions[$definition->id]);
-    }
-
-    /**
-     * Determine if the action is allowed in a production environment.
-     *
-     * @return bool
-     */
-    private function isAllowedInProduction(): bool
-    {
-        if (! config('laravel-playbook.production') && config('app.env') === 'production') {
-            return false;
-        }
-
-        return true;
     }
 }

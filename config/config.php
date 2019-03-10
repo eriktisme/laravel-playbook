@@ -6,8 +6,7 @@ return [
     | Playbook Path
     |--------------------------------------------------------------------------
     |
-    | This is the URI path where the command will search for playbook. Feel free
-    | to change this path to anything you like.
+    | This is the location where the command will search for playbooks.
     |
     */
     'path' => app_path(DIRECTORY_SEPARATOR.'Console'.DIRECTORY_SEPARATOR.'Playbooks'.DIRECTORY_SEPARATOR),
@@ -23,14 +22,4 @@ return [
     |
     */
     'namespace' => 'App\\Console\\Playbooks',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Playbook Production
-    |--------------------------------------------------------------------------
-    |
-    | Determine if it is possible to run playbook on your production environment.
-    |
-    */
-    'production' => env('PLAYBOOK_PRODUCTION', false),
 ];

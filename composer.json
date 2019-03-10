@@ -21,9 +21,8 @@
         "illuminate/console": "~5.7.0|~5.8.0"
     },
     "require-dev": {
-        "mockery/mockery": "^1.0",
-        "orchestra/testbench": "~3.7.0|~3.8.0",
-        "phpunit/phpunit": "^7.4"
+        "orchestra/testbench": "^3.7.6",
+        "phpunit/phpunit": "^7.5"
     },
     "autoload": {
         "psr-4": {
@@ -48,6 +47,5 @@
                 "Scaling\\Playbook\\PlaybookServiceProvider"
             ]
         }
-    },
-    "minimum-stability": "dev"
+    }
 }

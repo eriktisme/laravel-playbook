@@ -17,7 +17,8 @@ class PlaybookCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'playbook:run {playbook?}
+    protected $signature = 'playbook:run 
+                            {playbook? : The name of the playbook you want to run};
                             {--force : Force the operation to run when in production}';
 
     /**

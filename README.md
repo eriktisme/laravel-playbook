@@ -16,11 +16,24 @@ You can install the package via composer:
 composer require scaling/laravel-playbook
 ```
 
+You can publish the configurations with:
+```bash
+php artisan vendor:publish --provider="Scaling\Paybook\PlaybookServiceProvider" --tag="config"
+```
+
 ## Usage
 
-``` php
-// Usage description here
+### Running a predefined playbook
+``` bash
+php artisan playbook:run {playbook?}
 ```
+*Note:* incase you don't specify a playbook you will be prompted with a choice.
+
+### Creating a playbook
+``` bash
+php artisan make:playbook Foo
+```
+*Note: the command will automatically add a suffix.*
 
 ### Testing
 

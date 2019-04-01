@@ -5,6 +5,7 @@ namespace Scaling\Playbook\Console;
 use Illuminate\Support\Str;
 use Scaling\Playbook\Playbook;
 use Illuminate\Console\Command;
+use Illuminate\Support\Collection;
 use Illuminate\Console\ConfirmableTrait;
 use Scaling\Playbook\PlaybookDefenition;
 
@@ -98,9 +99,14 @@ class PlaybookCommand extends Command
 
         unset($files[0], $files[1]);
 
-        return array_values(array_map(function (string $fileName) {
-            return str_replace('.php', '', $fileName);
-        }, $files));
+        return Collection::make($files)
+            ->map(function ($fileName) {
+                return str_replace('.php', '', $fileName);
+            })
+            ->filter(function ($fileName) {
+                return $fileName !== '.DS_Store';
+            })
+            ->values()->toArray();
     }
 
     /**

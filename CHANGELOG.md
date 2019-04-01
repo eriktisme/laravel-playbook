@@ -2,8 +2,12 @@
 
 All notable changes to `laravel-playbook` will be documented in this file.
 
-## [Unreleased](https://github.com/teamscaling/laravel-playbook/compare/v1.0.3...master)
+## [Unreleased](https://github.com/teamscaling/laravel-playbook/compare/v1.0.4...master)
 
+## [v1.0.4 (2019-04-01)](https://github.com/teamscaling/laravel-playbook/compare/v1.0.3...v.1.0.4)
+
+### Fixed
+Ignore `.DS_Store` https://github.com/teamscaling/laravel-playbook/commit/84aaca5cc7d05ea22653b2980070ef58bb149fe6
 
 ## [v1.0.3 (2019-03-11)](https://github.com/teamscaling/laravel-playbook/compare/v1.0.2...v1.0.3)
 
